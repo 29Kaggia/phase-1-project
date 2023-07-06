@@ -1,14 +1,31 @@
 body{
-    background-color: pink;
-    text-align: center;
-    margin-bottom: 200px;
-    
+ background-color: white;
+ text-align: center;
+ margin-bottom: 200px;
+ background: url(https://i.pinimg.com/564x/7d/02/2f/7d022f309e0d6c1c120bb5fb24e5b8fb.jpg);
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+ backface-visibility: visible;
+ background-size: auto;
+ background-color: white; 
+ margin-bottom: 0%;  
 }
-ul{
+
+#navigation{
     list-style-type: none;
 }
-
-
+#logo{
+    width: 100px;
+    height:100px
+}
+#info{
+ display:  flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+     
+}
 h1{
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -20,18 +37,14 @@ footer{
     color: #fff;
     padding: 20px;
     text-align: center;
-    margin-top: 250px;
-   
+    margin-top: 600px;
+    position: sticky;
+    
 }
 nav{
     padding: 0%;
-    display: block;
+    display: none;
     margin-right: 10px;
-    
-    
-    
+      
 }
 
-#info{
-    
-}

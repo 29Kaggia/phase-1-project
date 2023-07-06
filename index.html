@@ -6,37 +6,38 @@
     <link >
     <title>Recipe Finder</title>
     <link rel="stylesheet" href="style.css">
-    <header>Recipe Finder</header>
+    <script src="script.js" defer></script>
+ 
 </head>
 <body>
-    <div class ="container">
-        <h1>Kaggia GoodFoods</h1>
-        <nav id="info"> 
-            <ul>
-                <li>
-            Home
-            About us
-            Contact
-            </li>
-            </ul>
     
+
+    <main>
+    <div class ="container">
+        <div> <img src="logo.jpg" id="logo"> </div>
+        <nav id="info"> 
+            <h1> Kaggia GoodFoods</h1>
+            <ul id="navigation">
+             <li> Home</li>
+             <li> About us</li>
+             <li>Contact</li>
+            </ul>
         </nav>
         <form>
             <input type="text"id ="search" placeholder="Enter ingredients">
-            <button type="button" id="Submit" class="btn" > search</button>
+            <button type="submit" id="Submit" class="btn" > search</button>
         
         </form>
         <ul id="display"></ul>
         <div id="results"></div>
     </div>
-    <script src="script.js"></script>
-
+</main>
+   
+   
+    <footer>
+        <p>info @kaggiaGoodFood.com</p>
+         <p>Powered by Faraja meals</p>
+         <p>All rights reserved!</p>   
+    </footer>
 </body>
-<footer>
-    <p>info @kaggiaGoodFood.com</p>
-     <p>Powered by Faraja meals</p>
-     <p>All rights reserved!</p>
-        
-    
-</footer>
 </html>

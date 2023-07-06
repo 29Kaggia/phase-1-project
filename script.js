@@ -1,13 +1,19 @@
  const searchForm = document.querySelector('form');
- const searchInput = document.querySelector('#search');
+ const searchInput = document.querySelector('#search')
  const resultList = document.querySelector('#results');
 
  searchForm.addEventListener('submit', (e) => {
      e.preventDefault();
-     const query = input.value.trim();
-     performSearch(query);
-     searchRecipes();
-     getDetails()
+    document.getElementById("results").innerHTML = ""
+     const query = e.target.search.value.trim();
+     
+    //  performSearch(query);
+    //  searchRecipes();
+    //  getDetails()
+    fetchRecipe(query)
+    e.target.search.value = ""
+
+
  })
 
 
@@ -28,11 +34,11 @@ function searchchRecipe(query){
 
 
 
-fetchRecipe ("chicken")
-function fetchRecipe(){
+
+function fetchRecipe(food){
 
     console.log("let's roll kwa fetchrecipe")
-    fetch('https://api.api-ninjas.com/v1/recipe?query=cheese',
+    fetch(`https://api.api-ninjas.com/v1/recipe?query=${food}`,
     {
         method: "GET",
         headers: {
@@ -51,8 +57,11 @@ function fetchRecipe(){
 
 function getDetails (recipe) {
     const listDetails = document.getElementById("results")
-    console.log(Object.values(recipe))
 
+    
+
+ 
+    const hr = document.createElement('hr')
     const ultag = document.createElement('ul')
 
     const title = document.createElement("li")
@@ -60,7 +69,7 @@ function getDetails (recipe) {
     ultag.append(title)
 
     const ingredient = document.createElement("li")
-    ingredient.innerText = recipe.ingredient
+    ingredient.innerText = recipe.ingredients
     ultag.append(ingredient)
 
     const servings = document.createElement("li")
@@ -70,8 +79,12 @@ function getDetails (recipe) {
     const instructions = document.createElement("li")
     instructions.innerText = recipe.instructions
     ultag.append(instructions)
+    ultag.append(hr)
 
     listDetails.append(ultag)
+
+
+    
     
     
 }
@@ -92,82 +105,4 @@ function DisplayRecipe(data) {
     });
     }
         
-    // function DisplayRecipe(){
-    //     html += 
-    //       `<div>
-    //       <img src ="${recipe.recipe.image}" alt="${recipe.recipe.label}">
-    //        <h3>${recipe.recipe.label}</h3>
-    //        <ul>
-    //           ${recipe.recipe.ingredientlines.map(ingredient => `<li>${ingredient}</li>`).join('')}</ul> 
-    //           <a href="${recipe.recipe.url}" target="_blank">View Recipe</a> 
-    //           </div> `
-
-    // }
-    // resultList.innerHTML = html;
-
-// fetchRecipe()
-
-
-//      recipes.forEach((recipe) => {
-//         html += 
-//          `<div>
-//          <img src ="${recipe.recipe.image}" alt="${recipe.recipe.label}">
-//           <h3>${recipe.recipe.label}</h3>
-//           <ul>
-//              ${recipe.recipe.ingredientlines.map(ingredient => `<li>$(ingredient)</li>`).join('')}</ul> 
-//              <a href="${recipe.recipe.url}" target="_blank">View Recipe</a> 
-//              </div> `
-//      })
-//      resultList.innerHTML = html;
- 
-
-
-// function searchchRecipe(query){
-
-//     console.log("let's roll")
-//     fetch('https://api.api-ninjas.com/v1/recipe?query=' + query,
-//     {
-//         method: "GET",
-//         headers: {
-//             'X-Api-Key': 'GY/B0iUO22W2UZ+7/EwOGQ==xEIFBGhlUlSatdqA',
-//             'Content-Type': 'application/json'
-//         }
-//     })
-//     .then(res => res.json())
-//     .then(data => console.log(data))
-// }
-
-// fetchRecipe("chicken")
-
-// function DisplayRecipe(){
-
-//     console.log("let's roll")
-//     fetch('https://api.api-ninjas.com/v1/recipe?query=chicken',
-//     {
-//         method: "GET",
-//         headers: {
-//             'X-Api-Key': 'GY/B0iUO22W2UZ+7/EwOGQ==xEIFBGhlUlSatdqA',
-//             'Content-Type': 'application/json'
-//         }
-//     })
-//     .then(res => res.json())
-//     .then(data => console.log(data))
-// }
-
-// fetchRecipe()
-
-
-// function getDetails (recipe) {
-//     const listDetails = document.getElementById("results")
-//     console.log(Object.values(recipe))
-//     const title = document.createElement("li")
-//     title.innerText = recipe.title
-//     const ingredient = document.createElement("li")
-//     ingredient.innerText = recipe.ingredient
-//     const servings = document.createElement("li")
-//     servings.innerText = recipe.servings
-//     const instructions = document.createElement("li")
-//     instructions.innerText = recipe.instructions
-    
-// }
-
+   
